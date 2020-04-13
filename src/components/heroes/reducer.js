@@ -20,13 +20,13 @@ export const heroesReducer = (state = initialState, action) => {
         heroes: action.payload.heroes.map((h) => ({ ...h, isDiaplay: true })),
       };
     case SEARCH_HEROES_REQUEST:
+      debugger;
       return {
         ...state,
         heroes: state.heroes.map((h) =>
-          (action.payload.heroName !== "" &&
-            h.name.indexOf(action.payload.heroName) === -1) ||
-          (action.payload.actorName !== "" &&
-            !h.realName.indexOf(action.payload.actorName) === -1)
+          ((h.name.indexOf(action.payload.heroName.trim()) === -1) ||
+          (h.realName.indexOf(action.payload.actorName.trim()) === -1)) &&
+          (action.payload.actorName !== "" || action.payload.heroName !== "")
             ? { ...h, isDiaplay: false }
             : { ...h, isDiaplay: true }
         ),
