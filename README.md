@@ -1,3 +1,7 @@
+```bash
+The tech stack combine - react redux, and saga midllware.
+```
+
 ## Running Front End - logmein Folder
 
 1) Open Visual Code or another friendly react/redux environment</br>
