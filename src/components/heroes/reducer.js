@@ -20,7 +20,6 @@ export const heroesReducer = (state = initialState, action) => {
         heroes: action.payload.heroes.map((h) => ({ ...h, isDiaplay: true })),
       };
     case SEARCH_HEROES_REQUEST:
-      debugger;
       return {
         ...state,
         heroes: state.heroes.map((h) =>
